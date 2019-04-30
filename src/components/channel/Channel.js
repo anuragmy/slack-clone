@@ -3,16 +3,17 @@ import PropTypes from "prop-types";
 
 class Channel extends Component {
   onClick = e => {
+    const { setChannel, channel } = this.props;
     e.preventDefault();
-    const { channel, setChannel } = this.props;
     setChannel(channel);
   };
 
   render() {
-    const { channel } = this.props;
+    const { channel, activeChannel } = this.props;
+    const active = channel === activeChannel ? "active" : "";
     return (
       <div>
-        <li>
+        <li className={active}>
           <a onClick={this.onClick}>{channel.name}</a>
         </li>
       </div>

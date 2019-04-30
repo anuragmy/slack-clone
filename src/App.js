@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ChannelSection from "./components/channel/ChannelSection";
+//import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends Component {
   constructor(props) {
@@ -22,12 +23,14 @@ class App extends Component {
   };
   render() {
     return (
-      <div>
-        <ChannelSection
-          channels={this.state.channels}
-          setChannel={this.setChannel}
-          addChannel={this.addChannel}
-        />
+      <div className="app">
+        <div className="nav">
+          <ChannelSection
+            {...this.state}
+            setChannel={this.setChannel}
+            addChannel={this.addChannel}
+          />
+        </div>
       </div>
     );
   }
