@@ -23,8 +23,8 @@ class App extends Component {
   };
   render() {
     return (
-      <div className="app">
-        <div className="nav">
+      <div className="container-fluid" style={{ marginLeft: 0 }}>
+        <div style={{ position: "absolute", left: 0, top: 0 }}>
           <ChannelSection
             {...this.state}
             setChannel={this.setChannel}

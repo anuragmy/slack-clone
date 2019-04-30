@@ -5,7 +5,7 @@ import Channel from "./Channel";
 class ChannelList extends Component {
   render() {
     return (
-      <ul>
+      <ul className="">
         {this.props.channels.map(chan => {
           return <Channel channel={chan} key={chan.id} {...this.props} />;
         })}

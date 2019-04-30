@@ -7,10 +7,10 @@ class ChannelSection extends Component {
   render() {
     console.log(this.props);
     return (
-      <div className="support panel panel-primary">
-        <div className="panel-heading">
-          <strong>Channels</strong>
-          <div className="panel-body channels">
+      <div className="card">
+        <div className="card-header">
+          <strong className="text-center">Channels</strong>
+          <div className="card-body list-group ">
             <ChannelList {...this.props} />
             <ChannelForm {...this.props} />
           </div>

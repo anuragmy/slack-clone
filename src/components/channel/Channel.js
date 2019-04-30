@@ -13,8 +13,16 @@ class Channel extends Component {
     const active = channel === activeChannel ? "active" : "";
     return (
       <div>
-        <li className={active}>
-          <a onClick={this.onClick}>{channel.name}</a>
+        <li
+          className={active}
+          style={{
+            listStyle: "none",
+            cursor: "pointer"
+          }}
+        >
+          <a className="list-group-item" onClick={this.onClick}>
+            {channel.name}
+          </a>
         </li>
       </div>
     );
