@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import ChannelSection from "./components/channel/ChannelSection";
+import UserSection from "./components/users/UserSection";
 //import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      channels: []
+      channels: [],
+      users: []
     };
   }
 
@@ -21,6 +23,12 @@ class App extends Component {
     this.setState({ activeChannel });
     //get channels messages
   };
+
+  setUserName = name => {
+    const { users } = this.state;
+    users.push({ id: users.length, name });
+    this.setState({ users });
+  };
   render() {
     return (
       <div className="container-fluid" style={{ marginLeft: 0 }}>
@@ -30,6 +38,7 @@ class App extends Component {
             setChannel={this.setChannel}
             addChannel={this.addChannel}
           />
+          <UserSection {...this.state} setUserName={this.setUserName} />
         </div>
       </div>
     );
